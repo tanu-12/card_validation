@@ -37,17 +37,20 @@
     </div>
     <div><label for=" Expiry">Exp. Date (MM/YY)</label>
       </br>
-      <input type="number" id="Expiry_mm" placeholder="MM">
-      <div class="error"></div>
-      <input type="number" id="Expiry__yy" placeholder="YY">
+      <input type="number" id="Expiry_mm" placeholder="MM" min="01" max="12">
       <div class="error"></div>
     </div>
     <div>
-      <label for="CVC">CVV</label>
-      <input type="number" id="Cvv" placeholder="e.g 123">
-      <div class="error"></div>
+      <input type="number" id="Expiry_yy" placeholder="YY" min="2022" max="2070">
+      <div class="error">Year</div>
     </div>
-    <button type="submit" name="Submit">Confirm</button>
+
+    <div>
+      <label for="CVV">CVV</label>
+      <input type="text" id="cvv" placeholder="e.g 123">
+      <div class="error">Cvv</div>
+    </div>
+    <button id="btn" type="submit">Confirm</button>
 
   </form>
 
@@ -83,7 +86,7 @@
     Coded by <a href="#">Your Name Here</a>.
 
   </div>
-  <script src="main.js" defer></script>
+  <script type="text/javascript" src="main.js" defer></script>
 </body>
 
 </html>
