@@ -25,6 +25,14 @@
 </head>
 
 <body>
+  <div id="card_front">
+    <img src="images/bg-card-front.png">
+    <div class="text">1234 1234 1234 0000</div>
+  </div>
+  <div id="card_back">
+    <img src="images/bg-card-back.png">
+    <div class="CVV_number">123</div>
+  </div>
   <div class="container">
     <div id="background">
       <img src="images/bg-main-desktop.png">
@@ -47,13 +55,13 @@
       </div>
       <div>
         <input type="number" id="Expiry_yy" placeholder="YY" min="2022" max="2070">
-        <div class="error">Year</div>
+        <div class="error"></div>
       </div>
 
       <div>
-        <label for="CVV">CVV</label>
+        <label for="CVV">CVV</label></br>
         <input type="text" id="cvv" placeholder="e.g 123">
-        <div class="error">Cvv</div>
+        <div class="error"></div>
       </div>
       <button id="btn" type="submit">Confirm</button>
 
@@ -87,11 +95,11 @@
   We've added your card details
   Continue-->
 
-  <div class=" attribution">
+  <!-- <div class=" attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
 
-  </div>
+  </div> -->
   <script type="text/javascript" src="main.js" defer></script>
 </body>
 

@@ -1,5 +1,13 @@
 let id = (id) => document.getElementById(id);
 let classes = (classes) => document.getElementsByClassName(classes);
+// let continueButton = document.createElement('button');
+const completionMsg = document.createElement('div');
+let completionImg = document.createElement('img');
+completionImg.src = "images/icon-complete.svg";
+completionMsg.appendChild(completionImg);
+// continueButton.type = "submit";
+// continueButton.textContent = "Continue";
+
 
 let cardHolder = id("Name");
 let card_Number = id("card_Number");
@@ -26,7 +34,7 @@ form.addEventListener("submit", (e) => {
 }
 );
 
-let checkEmpty = (id, serial, message) => {
+function checkEmpty(id, serial, message) {
     if (id.value.trim() === "") {
         errorMsg[serial].innerHTML = message;
         id.style.border = "2px solid red";
@@ -35,6 +43,7 @@ let checkEmpty = (id, serial, message) => {
     else {
         errorMsg[serial].innerHTML = "";
         id.style.border = "2px solid black";
+
 
     }
 }
@@ -45,8 +54,13 @@ card_Number.addEventListener("input", (e) => {
         errorMsg[1].innerHTML = "input correct format";
         card_Number.style.border = "2px solid red";
     }
-    else
+    else {
         errorMsg[1].innerHTML = "";
+        card_Number.style.border = "2px solid black";
+    }
+
+
+
 
 });
 cvv.addEventListener("input", (e) => {
@@ -57,6 +71,7 @@ cvv.addEventListener("input", (e) => {
     }
     else
         errorMsg[4].innerHTML = "";
+    cvv.style.border = "2px solid black";
 }
 );
 
