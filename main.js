@@ -1,12 +1,14 @@
 let id = (id) => document.getElementById(id);
 let classes = (classes) => document.getElementsByClassName(classes);
-// let continueButton = document.createElement('button');
+let continueButton = document.createElement('button');
 const completionMsg = document.createElement('div');
 let completionImg = document.createElement('img');
 completionImg.src = "images/icon-complete.svg";
-completionMsg.appendChild(completionImg);
-// continueButton.type = "submit";
-// continueButton.textContent = "Continue";
+completionMsg.textContent = "Thank You";
+continueButton.type = "submit";
+continueButton.textContent = "Continue";
+completionMsg.append(completionImg, continueButton);
+console.log(completionMsg);
 
 
 let cardHolder = id("Name");
@@ -25,11 +27,15 @@ console.log(errorMsg);
 //let btn=document.getElementsByTagName(button);
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    checkEmpty(cardHolder, 0, "Name can't be blank");
-    checkEmpty(card_Number, 1, "Card number can't be blank");
-    checkEmpty(month, 2, "Month can't be blank");
-    checkEmpty(year, 3, "Year can't be blank");
-    checkEmpty(cvv, 4, "CVV can't be blank");
+    let ch = checkEmpty(cardHolder, 0, "Name can't be blank");
+    let cn = checkEmpty(card_Number, 1, "Card number can't be blank");
+    let m = checkEmpty(month, 2, "Month can't be blank");
+    let y = checkEmpty(year, 3, "Year can't be blank");
+    let cv = checkEmpty(cvv, 4, "CVV can't be blank");
+
+    if (ch && cn && m && y && cv) {
+        form.innerHTML = completionMsg.innerHTML;
+    }
 
 }
 );
@@ -38,11 +44,13 @@ function checkEmpty(id, serial, message) {
     if (id.value.trim() === "") {
         errorMsg[serial].innerHTML = message;
         id.style.border = "2px solid red";
+        return false;
     }
 
     else {
         errorMsg[serial].innerHTML = "";
         id.style.border = "2px solid black";
+        return true;
 
 
     }
