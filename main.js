@@ -5,11 +5,15 @@ const completionMsg = document.createElement('div');
 let completionImg = document.createElement('img');
 completionImg.src = "images/icon-complete.svg";
 completionMsg.textContent = "Thank You";
-continueButton.type = "submit";
+continueButton.type = "button";
 continueButton.textContent = "Continue";
+// continueButton.addEventListener('click', (e) => {
+//     alert("new form");
+
+// });
 completionMsg.append(completionImg, continueButton);
 console.log(completionMsg);
-
+// let content = classes("content");
 
 let cardHolder = id("Name");
 let card_Number = id("card_Number");
@@ -57,7 +61,6 @@ function checkEmpty(id, serial, message) {
 }
 card_Number.addEventListener("input", (e) => {
     var pattern = /[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{3}([0-9]|[A-Z])$/;
-    ;
     if (!pattern.test(card_Number.value)) {
         errorMsg[1].innerHTML = "input correct format";
         card_Number.style.border = "2px solid red";
@@ -66,11 +69,9 @@ card_Number.addEventListener("input", (e) => {
         errorMsg[1].innerHTML = "";
         card_Number.style.border = "2px solid black";
     }
-
-
-
-
 });
+
+
 cvv.addEventListener("input", (e) => {
     var pattern = /^[\d]{3}/;
     if (!pattern.test(cvv.value)) {
@@ -82,4 +83,27 @@ cvv.addEventListener("input", (e) => {
     cvv.style.border = "2px solid black";
 }
 );
+form.addEventListener("input", (e) => {
+    let c_number = document.getElementById("c_number");
+    let c_name = document.getElementById("c_name");
+    let c_date = document.getElementById("c_date");
+    let c_cvv = document.getElementById("C_cvv");
+    c_number.textContent = card_Number.value;
+    c_name.textContent = cardHolder.value;
+    c_date.textContent = `${month.value}/${year.value}`;
+    c_cvv.textContent = cvv.value;
 
+});
+
+
+
+
+
+// continueButton.addEventListener("reset", (e) => {
+//     alert("new form");
+
+// });
+// // function resetForm() {
+// //     form.innerHTML = content;
+
+// // }
