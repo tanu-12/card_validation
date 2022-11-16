@@ -47,7 +47,7 @@ form.addEventListener("submit", (e) => {
 function checkEmpty(id, serial, message) {
     if (id.value.trim() === "") {
         errorMsg[serial].innerHTML = message;
-        id.style.border = "2px solid red";
+        id.style.border = "hsl(0, 100%, 66%)";
         return false;
     }
 
