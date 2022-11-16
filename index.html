@@ -27,6 +27,10 @@
 <body>
   <div id="card_front">
     <img src="images/bg-card-front.png">
+    <!-- <img id="logo" src="images/card-logo.svg"> -->
+
+
+
     <div class="text">
       <div id="c_number"></div>
       <div id="c_name"></div>
@@ -54,23 +58,25 @@
           <input type="text" id="card_Number" placeholder="e.g. 1234 5678 9123 0000">
           <div class="error"></div>
         </div>
+        <label for="ExpiryCVV">Exp. Date (MM/YY)&nbsp; &nbsp; &nbsp; CVV</label>
 
-        <div><label for=" Expiry">Exp. Date (MM/YY)</label>
-          </br>
+        <div class="expiryCVV">
+          <div class="expiry">
+            <input type="number" id="Expiry_mm" placeholder="MM" min="01" max="12">
 
-          <input type="number" id="Expiry_mm" placeholder="MM" min="01" max="12">
-          <div class="error"></div>
-        </div>
-        <div>
-          <input type="number" id="Expiry_yy" placeholder="YY" min="2022" max="2070">
-          <div class="error"></div>
-        </div>
 
-        <div>
-          <label for="CVV">CVV</label></br>
+            <input type="number" id="Expiry_yy" placeholder="YY" min="22" max="70">
+          </div>
+
           <input type="text" id="cvv" placeholder="e.g 123">
+
+        </div>
+        <div class="error_class">
+          <div class="error"></div>
+          <div class="error"></div>
           <div class="error"></div>
         </div>
+
 
         <button id="btn" type="submit">Confirm</button>
 
