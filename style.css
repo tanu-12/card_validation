@@ -21,14 +21,29 @@ body {
 
 }
 
+/* #logo {
+    position: absolute;
+    top: 25%;
+    left: 11%;
+    right: 0;
+    padding: 0;
+
+} */
+
 #c_number {
     color: white;
+    letter-spacing: 2px;
     position: absolute;
     top: 55%;
     bottom: 0;
     left: 5%;
     right: 0;
-    width: auto;
+    /* width: auto;
+    border: 2px solid black; */
+    height: 18px;
+    width: 280px;
+    word-spacing: 18px;
+    padding: 0 2px;
 
 }
 
@@ -54,7 +69,7 @@ body {
 
 #card_back {
     position: absolute;
-    top: 380px;
+    top: 360px;
     left: 300px;
 
 
@@ -87,8 +102,8 @@ body {
 .content {
 
     display: flex;
+    margin-top: 10%;
 
-    border: 2px solid black;
     width: 80%;
     height: 650px;
     align-items: center;
@@ -103,7 +118,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    border: 2px solid black;
+
     height: 70%;
     width: 30%;
     gap: 15px;
@@ -127,4 +142,48 @@ body {
 #background>img {
     height: 650px;
     width: 100%;
+}
+
+input {
+    padding: 10 20 10 80;
+    width: 100%;
+    height: 50%;
+}
+
+button {
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    padding: 5px 0;
+    border-radius: 5px;
+    width: 105%;
+}
+
+.expiryCVV {
+    display: flex;
+    gap: 70px;
+
+
+}
+
+.expiryCVV>input {
+    padding: 15;
+}
+
+.expiry {
+    display: flex;
+    gap: 2px;
+
+}
+
+.expiry>input {
+    padding: 15;
+}
+
+#cvv {
+    width: 55px;
+    margin-right: 0;
+}
+
+.error_class {
+    display: flex;
 }
